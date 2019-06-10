@@ -201,29 +201,29 @@ An example is given below for the `ggplot2` package that will be required for so
 install.packages("ggplot2")
 ```
 
-### Package installation from Bioconductor (as note) 
-Alternatively, packages can also be installed from [Bioconductor](https://www.bioconductor.org/), another repository of packages which provides tools for the analysis and comprehension of high-throughput **genomic data**. These packages includes (but is not limited to) tools for performing statistical analysis, annotation packages, and accessing public datasets.
-
-<img src="../img/bioconductor_logo.png" width="300">
-
-There are many packages that are available in CRAN and Bioconductor, but there are also packages that are specific to one repository. Generally, you can find out this information with a Google search or by trial and error. 
-
-To install from Bioconductor, you will first need to install BiocManager. *This only needs to be done once ever for your R installation.* 
-
-```r
-# DO NOT RUN THIS!
-
-install.packages("BiocManager")
-```
-
-Then you can use the `install()` function to install a package by providing the name in quotations. Here we show that the same package `ggplot2` is available through Bioconductor:
-
-```r
-# DO NOT RUN THIS!
-
-library(BiocManager)
-install("ggplot2")
-```
+>### Package installation from Bioconductor
+>Alternatively, packages can also be installed from [Bioconductor](https://www.bioconductor.org/), another repository of packages which provides tools for the analysis and comprehension of high-throughput **genomic data**. These packages includes (but is not limited to) tools for performing statistical analysis, annotation packages, and accessing public datasets.
+>
+><img src="../img/bioconductor_logo.png" width="300">
+>
+>There are many packages that are available in CRAN and Bioconductor, but there are also packages that are specific to one repository. Generally, you can find out this information with a Google search or by trial and error. 
+>
+>To install from Bioconductor, you will first need to install BiocManager. *This only needs to be done once ever for your R installation.* 
+>
+>```r
+># DO NOT RUN THIS!
+>
+>install.packages("BiocManager")
+>```
+>
+>Then you can use the `install()` function to install a package by providing the name in quotations. Here we show that the same package `ggplot2` is available through Bioconductor:
+>
+>```r
+># DO NOT RUN THIS!
+>
+>library(BiocManager)
+>install("ggplot2")
+>```
 
 ### Loading libraries
 Once you have the package installed, you can **load the library** into your R session for use. Any of the functions that are specific to that package will be available for you to use by simply calling the function as you would for any of the base functions. *Note that quotations are not required here.*
@@ -254,13 +254,13 @@ If your library is successfully loaded you will see the box checked, as in the s
 An alternative is to find the help manual online, which can be less technical and sometimes easier to follow. For example, [this website](http://docs.ggplot2.org/current/) is much more comprehensive for ggplot2 and is the result of a Google search. Many of the Bioconductor packages also have very helpful vignettes that include comprehensive tutorials with mock data that you can work with.
 
 
-### Cryptic error messages (as note)
-
-It is very likely that someone else has encountered this same problem already! 
-
-* Start by googling the error message.  However, this doesn't always work very well because often, package developers rely on the error catching provided by R. You end up with general error messages that might not be very helpful to diagnose a problem (e.g. "subscript out of bounds").
-
-* Check stackoverflow. Search using the `[r]` tag. Most questions have already been answered, but the challenge is to use the right words in the search to find the answers: [http://stackoverflow.com/questions/tagged/r](http://stackoverflow.com/questions/tagged/r)
+>### Cryptic error messages
+>
+>It is very likely that someone else has encountered this same problem already! 
+>
+>* Start by googling the error message.  However, this doesn't always work very well because often, package developers rely on the error catching provided by R. You end up with general error messages that might not be very helpful to diagnose a problem (e.g. "subscript out of bounds").
+>
+>* Check stackoverflow. Search using the `[r]` tag. Most questions have already been answered, but the challenge is to use the right words in the search to find the answers: [http://stackoverflow.com/questions/tagged/r](http://stackoverflow.com/questions/tagged/r)
 
 ***
 
