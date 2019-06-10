@@ -19,53 +19,70 @@ Dataframes (and matrices) have 2 dimensions (rows and columns), so if we want to
 For example:
 
 ```r
-metadata[1, 1]   # element from the first row in the first column of the data frame
-metadata[1, 3]   # element from the first row in the 3rd column
+# Extract the element from the first row in the first column
+metadata[1, 1]   
+
+# Extract the element from the second row in the 3rd column
+metadata[2, 3]   
 ```
 
-Now if you only wanted to select based on rows, you would provide the index for the rows and leave the columns index blank. The key here is to include the comma, to let R know that you are accessing a 2-dimensional data structure:
+Now if you only wanted to select entire rows, you would provide the index for the rows and leave the columns index blank. The key here is to include the comma, to let R know that you are accessing a 2-dimensional data structure:
 
 ```r
-metadata[3, ]    # vector containing all elements in the 3rd row
+# Extract all elements in the 3rd row
+metadata[3, ]    
 ```
+
+**What is the data structure of the output?**
 
 If you were selecting specific columns from the data frame - the rows are left blank:
 
 ```r
-metadata[ , 3]    # vector containing all elements in the 3rd column
+# Extract all elements in the 3rd column
+metadata[ , 3]    
 ```
 
 Just like with vectors, you can select multiple rows and columns at a time. Within the square brackets, you need to provide a vector of the desired values:	
 
 ```r
-metadata[ , 1:2] # dataframe containing first two columns
-metadata[c(1,3,6), ] # dataframe containing first, third and sixth rows
+# Extract the first two columns
+metadata[ , 1:2] 
+
+# Extract the first, third and sixth rows of the first and third columns
+metadata[c(1,3,6), c(1,3)] 
 ```
 
-For larger datasets, it can be tricky to remember the column number that corresponds to a particular variable. (Is celltype in column 1
-or 2? oh, right... they are in column 1). In some cases, the column number for a variable can change if the script you are using adds or removes columns. It's therefore often better to use column names to refer to a particular variable, and it makes your code easier to read and your intentions clearer.
+**What is the data structure of the output?**
+
+For larger datasets, it can be tricky to remember the column number that corresponds to a particular variable. (Is `celltype` in column 1 or 2?). In some cases, the column number for a variable can change if the script you are using adds or removes columns. It's therefore often better to use column names to refer to a particular variable, and it makes your code easier to read and your intentions clearer.
 
 ```r
-metadata[1:3 , "celltype"] # elements of the celltype column corresponding to the first three samples
+# Extract the elements of the celltype column corresponding to the first three samples
+metadata[1:3 , "celltype"] 
 ```
 
 
-You can do operations on a particular column, by selecting it using the `$` sign. In this case, the entire column is a vector. For instance, to extract all the genotypes from our dataset, we can use: 
+You can do operations on a particular column, by selecting it using the `$` sign using the column name. In this case, the entire column is a vector. For instance, to extract all the genotypes from our dataset, we can use: 
 
 ```r
+# Extract genotype column using $ notation
 metadata$genotype 
 ```
+
 You can use `colnames(metadata)` or `names(metadata)` to remind yourself of the column names. We can then supply index values to select specific values from that vector. For example, if we wanted the genotype information for the first five samples in `metadata`:
 
 ```r
+# Check the column names of the dataframe
 colnames(metadata)
 
+# Extract the first 5 elements of the genotype column
 metadata$genotype[1:5]
 ```
 
-The `$` allows you to select a single column by name. To select multiple columns by name, you need to  concatenate a vector of strings that correspond to column names: 
+The `$` allows you to select a single column by name. To select multiple columns by name, you need to concatenate a vector of strings that correspond to column names: 
 
 ```r
+# Extract multiple columns from the dataframe using column names
 metadata[, c("genotype", "celltype")]
 ```
 
@@ -88,41 +105,57 @@ sample12       KO    typeB
 While there is no equivalent `$` syntax to select a row by name, you can select specific rows using the row names. To remember the names of the rows, you can use the `rownames()` function:
 
 ```r
+# Check the row names of the metadata dataframe
 rownames(metadata)
 
+# Extract multiple rows from a dataframe using row names
 metadata[c("sample10", "sample12"),]
 ```
 
 #### Selecting using indices with logical operators
 
-With dataframes, similar to vectors, we can use logical vectors for specific columns in the dataframe to select only the rows in a dataframe with TRUE values at the same position or index as in the logical vector. We can then use the logical vector to return all of the rows in a dataframe where those values are TRUE.
+With dataframes, similar to vectors, we can use logical vectors for specific columns in the dataframe to select only the rows in a dataframe with TRUE values at the same position or index as in the logical vector. We can then use the logical vector to return all of the rows in a dataframe where those values are TRUE (or NA).
 
 ```r
+# Check which celltype values are equal to typeA
+metadata$celltype == "typeA"
+
+# Save the output T/F values to a variable
 idx <- metadata$celltype == "typeA"
-	
+
+# Extract the rows of the metadata which are TRUE (or NA)
 metadata[idx, ]
 ```
 
 ##### Selecting indices with logical operators using the `which()` function
+
 As you might have guessed, we can also use the `which()` function to return the indices for which the logical expression is TRUE. For example, we can find the indices where the `celltype` is `typeA` within the `metadata` dataframe:
 
 ```r
+# Check the row positions for which celltype values are equal to typeA
+which(metadata$celltype == "typeA")
+
+# Save the output indices to a variable
 idx <- which(metadata$celltype == "typeA")
-	
+
+# Extract the rows of the metadata which are TRUE
 metadata[idx, ]
 ```
 
 Or we could find the indices for the metadata replicates 2 and 3:
 
 ```r
+# Determine which rows have replicate values > 1
 idx <- which(metadata$replicate > 1)
-	
+
+# Extract the corresponding rows	
 metadata[idx, ]
 ```
 
 Let's save this output to a variable:
 
 ```r
+# Extract the corresponding rows and save to a variable
 sub_meta <- metadata[idx, ]
 ```
 
@@ -150,85 +183,6 @@ What do you see printed to the console? Using the double bracket notation is use
 comp2 <- list1[[2]]
 class(comp2)
 ```
-
-You can also reference what is inside the component by adding and additional bracket. For example, in the first component we have a vector stored. 
-
-```r
-list1[[1]]
-	
-[1] "ecoli" "human" "corn" 
-```
-
-Now, if we wanted to reference the first element of that vector we would use:
-
-```r
-list1[[1]][1]
-
-[1] "ecoli"
-```
-
-You can also do the same for dataframes and matrices, although with larger datasets it is not advisable. Instead, it is better to save the contents of a list component to a variable (as we did above) and further manipulate it. Also, it is important to note that when selecting components we can only **access one at a time**. To access multiple components of a list, see the note below. 
-
-> **NOTE:** Using the single bracket notation also works wth lists. The difference is the class of the information that is retrieved. Using single bracket notation i.e. `list1[1]` will return the contents in a list form and *not the original data structure*. The benefit of this notation is that it allows indexing by vectors so you can access multiple components of the list at once.
-
-
-***
-
-**Exercises**  
-
-Let's practice inspecting lists. Create a list named `random` with the following components: `metadata`, `age`, `list1`, `samplegroup`, and `number`.
-
-1. Print out the values stored in the `samplegroup` component.
-	
-2. From the `metadata` component of the list, extract the `celltype` column. From the celltype values select only the last 5 values.
-	
-***
-
-Assigning names to the components in a list can help identify what each list component contains, as well as, facilitating the extraction of values from list components. 
-
-Adding names to components of a list uses the same function as adding names to the columns of a dataframe, `names()`.
-	
-Let's check and see if the `list1` has names for the components:
-
-```r
-names(list1) 
-```
-
-When we created the list we had combined the `species` vector with  a dataframe `df` and the `number` variable. Let's assign the original names to the components:
-
-```r
-names(list1) <- c("species", "df", "number")
-	
-names(list1)
-```
-
-Now that we have named our list components, we can extract components using the `$` similar to extracting columns from a dataframe. To obtain a component of a list using the component name, use `list_name$component_name`:
-
-To extract the `df` dataframe from the `list1` list:
-
-```r
-list1$df
-```
-
-Now we have three ways that we could extract a component from a list. Let's extract the `species` vector from `list1`:
-
-```r
-list1[[1]]
-list1[["species"]]
-list1$species
-```
-
-***
-
-**Exercise**
-
-Let's practice combining ways to extract data from the data structures we have covered so far:
-
-1. Set names for the `random` list you created in the last exercise.
-2. Extract the third component of the `age` vector from the `random` list.
-3. Extract the genotype information from the `metadata` dataframe from the `random` list.
-
-***
 
 ### Writing to file 
 

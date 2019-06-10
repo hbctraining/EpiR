@@ -201,7 +201,7 @@ An example is given below for the `ggplot2` package that will be required for so
 install.packages("ggplot2")
 ```
 
-### Package installation from Bioconductor
+### Package installation from Bioconductor (as note) 
 Alternatively, packages can also be installed from [Bioconductor](https://www.bioconductor.org/), another repository of packages which provides tools for the analysis and comprehension of high-throughput **genomic data**. These packages includes (but is not limited to) tools for performing statistical analysis, annotation packages, and accessing public datasets.
 
 <img src="../img/bioconductor_logo.png" width="300">
@@ -223,18 +223,6 @@ Then you can use the `install()` function to install a package by providing the 
 
 library(BiocManager)
 install("ggplot2")
-```
-
-### Package installation from source
-
-Finally, R packages can also be installed from source. This is useful when you do not have an internet connection (and have the source files locally), since the other two methods are retrieving the source files from remote sites. 
-
-To install from source, we use the same `install.packages` function but we have additional arguments that provide *specifications* to *change from defaults*:
-
-```r
-# DO NOT RUN THIS!
-
-install.packages("~/Downloads/ggplot2_1.0.1.tar.gz", type="source", repos=NULL)
 ```
 
 ### Loading libraries
@@ -265,17 +253,8 @@ If your library is successfully loaded you will see the box checked, as in the s
 
 An alternative is to find the help manual online, which can be less technical and sometimes easier to follow. For example, [this website](http://docs.ggplot2.org/current/) is much more comprehensive for ggplot2 and is the result of a Google search. Many of the Bioconductor packages also have very helpful vignettes that include comprehensive tutorials with mock data that you can work with.
 
-### Finding functions but not knowing which package it is a part of
 
-If you are looking for a function to do a particular task, you can use `help.search()` (*but only looks through the installed packages*):
-
-```r
-help.search("scatter")
-```
-
-If you can't find what you are looking for, you can use the [rdocumention.org](https://www.rdocumentation.org/) website that search through the help files across all packages available.
-
-### Cryptic error messages
+### Cryptic error messages (as note)
 
 It is very likely that someone else has encountered this same problem already! 
 
@@ -287,51 +266,12 @@ It is very likely that someone else has encountered this same problem already!
 
 **Exercise**
 
-The `ggplot2` package is part of the [`tidyverse` suite of integrated packages](https://www.tidyverse.org/packages/) which was designed to work together to make common data science operations more user-friendly. **We will be using the `tidyverse` suite in later lessons, and so let's install it**. _NOTE: This suite of packages is only available in CRAN._ 
+The `ggplot2` package is part of the [`tidyverse` suite of integrated packages](https://www.tidyverse.org/packages/) which was designed to work together to make common data science operations more user-friendly. **We will be using the `tidyverse` suite in later lessons, and so let's install it**. 
 
 ***
 
-## Asking for help
 
-The key to getting help from someone is for them to grasp your problem rapidly. You
-should make it as easy as possible to pinpoint where the issue might be.
-
-1. Try to **use the correct words** to describe your problem. For instance, a package
-is not the same thing as a library. Most people will understand what you meant,
-but others have really strong feelings about the difference in meaning. The key
-point is that it can make things confusing for people trying to help you. **Be as
-precise as possible when describing your problem.**
-
-2. **Always include the output of `sessionInfo()`** as it provides critical information about your platform, the versions of R and the packages that you are using, and other information that can be very helpful to understand your problem.
-
-```r
-sessionInfo()  #This time it is not interchangeable with search()
-```
-
-3. If possible, **reproduce the problem using a very small `data.frame`**
-instead of your 50,000 rows and 10,000 columns one, provide the small one with
-the description of your problem. When appropriate, try to generalize what you
-are doing so even people who are not in your field can understand the question. 
-	- To share an object with someone else, you can provide either the raw file (i.e., your CSV file) with
-your script up to the point of the error (and after removing everything that is
-not relevant to your issue). Alternatively, in particular if your questions is
-not related to a `data.frame`, you can save any other R data structure that you have in your environment to a file:
-
-```r
-# DO NOT RUN THIS!
-
-save(iris, file="/tmp/iris.RData")
-```
-
-The content of this `.RData` file is not human readable and cannot be posted directly on stackoverflow. It can, however, be emailed to someone who can read it with this command:
-
-```r
-# DO NOT RUN THIS!
-
-some_data <- load(file="~/Downloads/iris.RData")
-```
-
-### Where to ask for help?
+## Where to ask for help?
 
 * **Your friendly colleagues**: if you know someone with more experience than you,
   they might be able and willing to help you.

@@ -67,54 +67,6 @@ The pipe represents a much easier way of writing and deciphering R code, and so 
 
 ***
 
-### Tibbles
-
-A core component of the [tidyverse](http://tidyverse.org/) is the [tibble](http://tibble.tidyverse.org/). **Tibbles are a modern rework of the standard `data.frame`, with some internal improvements** to make code more reliable.  They are data frames, but do not follow all of the same rules. For example, tibbles can have numbers/symbols for column names, which is not normally allowed in base R. 
-
-**Important: [tidyverse](http://tidyverse.org/) is very opininated about row names**. These packages insist that all column data (e.g. `data.frame`) be treated equally, and that special designation of a column as `rownames` should be deprecated. [Tibble](http://tibble.tidyverse.org/) provides simple utility functions to handle rownames: `rownames_to_column()` and `column_to_rownames()`. More help for dealing with row names in tibbles can be found:
-
-```r
-help("rownames", "tibble")
-```
-
-Tibbles can be created directly using the `tibble()` function or data frames can be converted into tibbles using `as_tibble(name_of_df)`. 
-
->**NOTE:** The function `as_tibble()` will ignore row names, so if a column representing the row names is needed, then the function `rownames_to_column(name_of_df)` should be run prior to turning the data.frame into a tibble. Also, `as_tibble()` will not coerce character vectors to factors by default.
-
-***
-**Exercises**
-
-1. Create a tibble called `df_tibble` using the `tibble()` function to combine the vectors `species` and `glengths`. _NOTE: your `glengths` vector may not be the same length as `species`, so you will need to use an appropriately sized subset._
-
-2. Change the `metadata` data frame to a tibble called `meta_tibble`. Use the `rownames_to_column()` function to preserve the rownames combined with using `%>%` and the `as_tibble()` function.
-
-***
-
-A nice feature of a tibble is that **when printing a variable to screen, it will show only the first 10 rows and the columns that fit to the screen by default**. This is nice since you don't have to specify `head()` to take a quick look at your dataset. 
-
-
-```r
-# Default printing of data.frame
-rpkm_data
-
-# Default printing of tibble
-rpkm_data %>% 
-  rownames_to_column() %>% 
-  as_tibble()
-```
-
-
-> **NOTE:** If it is desirable to view more of the dataset, the `print()` function can change the number of rows or columns displayed.
->
-> ```
-> # Printing of tibble with print() - change defaults
->  rpkm_data %>% 
->  rownames_to_column() %>% 
->  as_tibble() %>% 
->  print(n = 20, width = Inf)
-> ```
-
-*** 
 
 ## Tidyverse tools
 
