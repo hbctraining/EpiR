@@ -22,7 +22,8 @@ These materials are intended to provide both basic R programming knowledge and i
 
 Below are links to the lessons and suggested schedules:
 
-* [1-day schedule](https://hbctraining.github.io/Intro-to-R/schedules/1.5-day.html)
+* [1-day schedule](https://hbctraining.github.io/EpiR/schedules/6-hour.html)
+
 
 ### Installation Requirements
 
