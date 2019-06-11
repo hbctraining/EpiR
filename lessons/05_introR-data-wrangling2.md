@@ -167,20 +167,36 @@ Subset the `metadata` dataframe to return only the rows of data with a genotype 
 	
 ***
 
-> **NOTE:** There are easier methods for subsetting **dataframes** using logical expressions, including the `filter()` and the `subset()` functions. These functions will return the rows of the dataframe for which the logical expression is TRUE, allowing us to subset the data in a single step. We will explore the `filter()` function in more detail in a later lesson.
+#### Extracting rows using filter()
+
+There are easier methods for subsetting the rows of **dataframes** using logical expressions, including the `filter()` and `subset()` functions. These functions will return the rows of the dataframe for which the logical expression is TRUE, allowing us to subset the data in a single step. We will explore the `filter()` function in more detail.
+
+```r
+# Extract the rows of the dataframe with genotype of `KO`
+filter(metadata, genotype == "KO")
+
+# Extract the rows with celltype of typeB
+filter(metadata, celltype == "typeB")
+```
+
+The `filter()` function can be quite handy, though it won't replace all instances of requiring the `[]`, such as for filtering columns in a dataframe or for extracting values in a vector.
 
 ### Lists
 
 Selecting components from a list requires a slightly different notation, even though in theory a list is a vector (that contains multiple data structures). To select a specific component of a list, you need to use double bracket notation `[[]]`. Let's use the `list1` that we created previously, and index the second component:
 
 ```r
+# Extract the 2nd component
 list1[[2]]
 ```
 
 What do you see printed to the console? Using the double bracket notation is useful for **accessing the individual components whilst preserving the original data structure.** When creating this list we know we had originally stored a dataframe in the second component. With the `class` function we can check if that is what we retrieve:
 
 ```r
+# Extract and save to a variable
 comp2 <- list1[[2]]
+
+# Check the class of the variable
 class(comp2)
 ```
 
@@ -191,6 +207,7 @@ Everything we have done so far has only modified the data in R; the files have r
 To write our matrix to file in comma separated format (.csv), we can use the `write.csv` function. There are two required arguments: the variable name of the data structure you are exporting, and the path and filename that you are exporting to. By default the delimiter is set, and columns will be separated by a comma:
 
 ```r
+# Save dataframe to csv file
 write.csv(sub_meta, file="data/subset_meta.csv")
 ```
 
@@ -201,6 +218,7 @@ Similar to reading in data, there are a wide variety of functions available allo
 Writing a vector of values to file requires a different function than the functions available for writing dataframes. You can use `write()` to save a vector of values to file. For example:
 
 ```r
+# Save vector to file
 write(glengths, file="data/genome_lengths.txt", ncolumns=1)
 ```
 
