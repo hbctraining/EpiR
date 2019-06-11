@@ -10,6 +10,13 @@ Approximate time: 35 minutes
 * Interact with R using RStudio.
 * Use the various components of RStudio.
 
+## Downloading R and RStudio
+
+To get started we need to download R and RStudio. We will download both applications, but we will only need to open RStudio as it automatically opens R as a window in the interface.
+
+- Download [R](https://cran.r-project.org/): select the link appropriate for your operating system
+- Download [RStudio](https://www.rstudio.com/products/rstudio/download/#download): pick the appropriate installer for your operating system
+
 ## Creating a new project directory in RStudio
 
 Let's create a new project directory for our "Introduction to R" lesson today. 
