@@ -1,7 +1,7 @@
 ---
 title: "Data wrangling: dataframes, matrices, and lists"
 authors: Meeta Mistry, Mary Piper
-date: "Wednesday, April, 4th, 2018"
+date: "Tuesday, June 11, 2019"
 ---
 Approximate time: 60 min
 
@@ -225,7 +225,7 @@ write(glengths, file="data/genome_lengths.txt", ncolumns=1)
 ***
 
 > ### An R package for data wrangling
-> The methods presented above are using base R functions for data wrangling. Later we will explore the **Tidyverse suite of packages**, specifically designed to make data wrangling easier.
+> The methods presented above are using base R functions for data wrangling. The **Tidyverse suite of packages** was specifically designed to make data wrangling easier. The filter() function is from the Tidyverse, and we have [additional materials]() for exploration of these tools.
 
 ---
 
