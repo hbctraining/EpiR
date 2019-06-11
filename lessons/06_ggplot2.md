@@ -14,14 +14,18 @@ Approximate time: 60 minutes
 
 ## Setting up a data frame for visualization
 
-In this lesson we want to make various plots related to the average expression in each sample. When we make the plots, we also want to use all the metadata available to appropriately annotate the plots. 
+In this lesson we want to make a basic scatter plot with average expression in each sample on one axis and the age of the mouse on the other axis. When we make the plots, we also want to use all the metadata available to appropriately annotate the plots. 
 
-Let's take a closer look at our counts data. Each column represents a sample in our experiment, and each sample has ~38K values corresponding to the expression of different transcripts. We want to compute **the average value of expression** for each sample eventually. 
-
-Before we start to plot, we also want to add an additional metadata column to `metadata`, this new column lists the age of each of the mouse samples in days.
+Let's take a look at the metadata table and check what information we already have.
 
 ```r
-# Create a numeric vector with ages. Note that there are 12 elements here.
+View(metadata)
+```
+
+Looks like we are missing information about the age of each of the mouse samples; let us add an additional metadata column to `metadata`.
+
+```r
+# Create a numeric vector with ages. Note that there are 12 elements here since there are 12 rows in metadata dataframe
 age_in_days <- c(40, 32, 38, 35, 41, 32, 34, 26, 28, 28, 30, 32)    
 
 # Add the new vector as the last column to the metadata dataframe
@@ -32,7 +36,7 @@ We are now ready for plotting and data visualization!
 
 ## Data Visualization with `ggplot2`
 
-When we are working with large sets of numbers it can be useful to display that information graphically to gain more insight. Visualization deserves an entire course of its own (there is that much to know!). If you are interested in learning about plotting with base R functions, we have a short lesson [available here](basic_plots_in_r.md). In this lesson we will be plotting with the popular Bioconductor package [`ggplot2`](http://docs.ggplot2.org/).
+When we are working with large sets of numbers it can be useful to display that information graphically to gain more insight. Visualization deserves an entire course of its own (there is that much to know!). In this lesson we will be plotting with the popular package [`ggplot2`](http://docs.ggplot2.org/).
 
 More recently, R users have moved away from base graphic options towards `ggplot2` since it offers a lot more functionality as compared to the base R plotting functions. The `ggplot2` syntax takes some getting used to, but once you get it, you will find it's extremely powerful and flexible. We will start with drawing a simple x-y scatterplot of `samplemeans` versus `age_in_days` from the `metadata` data frame. `ggplot2` assumes that the input is a  data frame.
 
@@ -172,31 +176,30 @@ ggplot(metadata) +
 
 There are two ways in which figures and plots can be output to a file (rather than simply displaying on screen). The first (and easiest) is to export directly from the RStudio 'Plots' panel, by clicking on `Export` when the image is plotted. This will give you the option of `png` or `pdf` and selecting the directory to which you wish to save it to. It will also give you options to dictate the size and resolution of the output image.
 
->The second option is to use R functions and have the write to file hard-coded in to your script. This would allow you to run the script from start to finish and automate the process (not requiring human point-and-click actions to save).  In R’s terminology, **output is directed to a particular output device and that dictates the output format that will be produced**.  A device must be created or “opened” in order to receive graphical output and, for devices that create a file on disk, the device must also be closed in order to complete the output.
->
->Let's print our scatterplot to a pdf file format. First you need to initialize a plot using a function which specifies the graphical format you intend on creating i.e.`pdf()`, `png()`, `tiff()` etc. Within the function you will need to specify a name for your image, and the with and height (optional). This will open up the device that you wish to write to:
->```r
->pdf("figures/scatterplot.pdf")
->```
->
->If you wish to modify the size and resolution of the image you will need to add in the appropriate parameters as arguments to the function when you initialize. Then we plot the image to the device, using the ggplot scatterplot that we just created. 
->
->```r
->ggplot(metadata) +
->  geom_point(aes(x = age_in_days, y= samplemeans, color = genotype,
->  			shape=celltype), size=rel(3.0)) 
->```
->
->Finally, close the "device", or file, using the `dev.off()` function. There are also `bmp`, `tiff`, and `jpeg` functions, though the jpeg function has proven less stable than the others. 
->  			
->```r    
->dev.off()
->```
->
->***Note 1:*** *You will not be able to open and look at your file using standard methods (Adobe Acrobat or Preview etc.) until you execute the `dev.off()` function.*
->
->***Note 2:*** *If you had made any additional plots before closing the device, they will all be stored in the same file; each plot usually gets its own page, unless you specify otherwise.*
->
+The second option is to use R functions and have the write to file hard-coded in to your script. This would allow you to run the script from start to finish and automate the process (not requiring human point-and-click actions to save).  In R’s terminology, **output is directed to a particular output device and that dictates the output format that will be produced**.  A device must be created or “opened” in order to receive graphical output and, for devices that create a file on disk, the device must also be closed in order to complete the output. We are not going to do this in class, but you can find more information in the note below.
+
+> Let's print our scatterplot to a pdf file format. First you need to initialize a plot using a function which specifies the graphical format you intend on creating i.e.`pdf()`, `png()`, `tiff()` etc. Within the function you will need to specify a name for your image, and the with and height (optional). This will open up the device that you wish to write to:
+> ```r
+> pdf("figures/scatterplot.pdf")
+> ```
+> 
+> If you wish to modify the size and resolution of the image you will need to add in the appropriate parameters as arguments to the function when you initialize. Then we plot the image to the device, using the ggplot scatterplot that we just created. 
+> 
+> ```r
+> ggplot(metadata) +
+>   geom_point(aes(x = age_in_days, y= samplemeans, color = genotype,
+>   			shape=celltype), size=rel(3.0)) 
+> ```
+> 
+> Finally, close the "device", or file, using the `dev.off()` function. There are also `bmp`, `tiff`, and `jpeg` functions, though the jpeg function has proven less stable than the others. 
+>   			
+> ```r    
+> dev.off()
+> ```
+> 
+> ***Note 1:*** *You will not be able to open and look at your file using standard methods (Adobe Acrobat or Preview etc.) until you execute the `dev.off()` function.*
+> 
+> ***Note 2:*** *If you had made any additional plots before closing the device, they will all be stored in the same file; each plot usually gets its own page, unless you specify otherwise.*
 
 
 ---
