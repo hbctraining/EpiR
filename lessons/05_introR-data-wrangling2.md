@@ -225,7 +225,7 @@ write(glengths, file="data/genome_lengths.txt", ncolumns=1)
 ***
 
 > ### An R package for data wrangling
-> The methods presented above are using base R functions for data wrangling. The **Tidyverse suite of packages** was specifically designed to make data wrangling easier. The `filter()` function is from the Tidyverse, and we have [additional materials](https://hbctraining.github.io/Training-modules/Tidyverse_ggplot2/lessons/intro_tidyverse.html) available for exploration of these tools.
+> With the exception of `filter()`, the methods presented above are using base R functions for data wrangling. The **Tidyverse suite of packages** was specifically designed to make data wrangling easier. The `filter()` function is from the Tidyverse, and we have [additional materials](https://hbctraining.github.io/Training-modules/Tidyverse_ggplot2/lessons/intro_tidyverse.html) available for exploration of these tools.
 
 ---
 
