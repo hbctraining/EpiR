@@ -5,7 +5,7 @@
 | Time            |  Topic  | Instructor |
 |:------------------------:|:------------------------------------------------:|:--------:|
 |09:00 - 09:30 | [Workshop Introduction]() | Radhika |
-|09:30 - 10:00 | [Introduction to R and RStudio]() | Radhika |
+|09:30 - 10:00 | [Introduction to R and RStudio](https://hbctraining.github.io/EpiR/lessons/01_introR-R-and-RStudio.html) | Radhika |
 |10:00 - 10:40 | [R Syntax and Data Structure](https://hbctraining.github.io/Intro-to-R/lessons/02_introR-syntax-and-data-structures.html) | Mary |
 |10:40 - 10:50 | Break | |
 |10:50 - 11:20 | [R Syntax and Data Structure (contd.)](https://hbctraining.github.io/Intro-to-R/lessons/02_introR-syntax-and-data-structures.html) | Mary |
