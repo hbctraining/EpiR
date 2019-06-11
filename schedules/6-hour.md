@@ -15,7 +15,7 @@
 
 | Time            |  Topic  | Instructor |
 |:------------------------:|:------------------------------------------------:|:--------:|
-|09:00 - 09:25 | [Packages and Libraries](https://hbctraining.github.io/EpiR/lessons/03_introR-functions-and-arguments.html#packages-and-libraries) | Meeta |
+|09:00 - 09:25 | [Packages and Libraries](https://hbctraining.github.io/EpiR/lessons/03_introR-functions-and-arguments.html#packages-and-libraries) | Mary |
 |09:25 - 10:10 | [Data Wrangling: Subsetting Vectors and Factors](https://hbctraining.github.io/EpiR/lessons/04_introR-data-wrangling.html) | Radhika |
 |10:10 - 10:40 | [Data Wrangling: Subsetting Data Frames, Matrices, and Lists](https://hbctraining.github.io/EpiR/lessons/05_introR-data-wrangling2.html) | Mary |
 |10:40 - 10:50 | Break | |
