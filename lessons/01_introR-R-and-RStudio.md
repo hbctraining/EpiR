@@ -19,7 +19,7 @@ To get started we need to download R and RStudio. We will download both applicat
 
 ## Creating a new project directory in RStudio
 
-Let's create a new project directory for our "Introduction to R" lesson today. 
+Let's create a new project folder/directory for our "Introduction to R" lesson today. When starting on a new analysis or project, it is best practice to create distinct sub-folders for input data, results etc. RStudio can help with this as described below.
 
 1. Open RStudio
 2. Go to the `File` menu and select `New Project`.
@@ -30,6 +30,8 @@ Let's create a new project directory for our "Introduction to R" lesson today.
 7. Go to the `File` menu and select `New File`, and select `R Script`. The RStudio interface should now look like the screenshot below.
 
 ![RStudio interface](../img/Rstudio_interface.png)
+
+> When you create a Project from within RStudio, it not only creates a structured folder for you, it also creates hidden files that keep track of all the work you are performing when you have the specific project open (see top right-hand corner for name of open Project).
 
 ## RStudio Interface
 
