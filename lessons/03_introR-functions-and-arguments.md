@@ -110,7 +110,7 @@ round(3.14159, digits=2)
 >
 	round(3.14159, 2)
 >
->However, it's usually not recommended practice because it involves a lot of memorization. In addition, it makes your code difficult to read for your future self and others, especially if your code includes functions that are not commonly used. (It's however OK to not include the names of the arguments for basic functions like `mean`, `min`, etc...). Another advantage of naming arguments, is that the order doesn't matter. This is useful when a function has many arguments. 
+> However, it's usually not recommended practice because it involves a lot of memorization. In addition, it makes your code difficult to read for your future self and others, especially if your code includes functions that are not commonly used. (It's however OK to not include the names of the arguments for basic functions like `mean`, `min`, etc...). Another advantage of naming arguments, is that the order doesn't matter. This is useful when a function has many arguments. 
 
 
 ***
@@ -118,6 +118,28 @@ round(3.14159, digits=2)
 
 1. Another commonly used base function is `mean()`. Use this function to calculate an average for the `glengths` vector.
 2. Use the help manual to identify additional arguments for `mean()`.
+
+***
+
+> **User-defined Functions**
+> 
+> One of the great strengths of R is the user's ability to add functions. Sometimes there is a small task (or series of tasks) you need done and you find yourself having to repeat it multiple times. In these types of situations it can be helpful to create your own custom function. We don't have time to delve into this, but you can find more information about this functionality on this [R-bloggers site](https://www.r-bloggers.com/how-to-write-and-debug-an-r-function/). 
+> 
+> The **structure of a function is given below**:
+> 
+> ```r
+> name_of_function <- function(argument1, argument2) {
+>     statements or code that does something
+>     return(something)
+> }
+> ```
+> 
+> * First you give your function a name. 
+> * Then you assign value to it, where the value is the function. 
+> 
+> When **defining the function** you will want to provide the **list of arguments required** (inputs and/or options to modify behaviour of the function), and wrapped between curly brackets place the **tasks that are being executed on/using those arguments**.  The argument(s) can be any type of object (like a scalar, a matrix, a dataframe, a vector, a logical, etc), and it’s not necessary to define what it is in any way. 
+> 
+> Finally, you can **“return” the value of the object from the function**, meaning pass the value of it into the global environment. The important idea behind functions is that objects that are created within the function are local to the environment of the function – they don’t exist outside of the function. 
 
 ***
 
@@ -129,43 +151,6 @@ round(3.14159, digits=2)
 
 ***
 
-### User-defined Functions
-
-One of the great strengths of R is the user's ability to add functions. Sometimes there is a small task (or series of tasks) you need done and you find yourself having to repeat it multiple times. In these types of situations it can be helpful to create your own custom function. The **structure of a function is given below**:
-
-```r
-name_of_function <- function(argument1, argument2) {
-    statements or code that does something
-    return(something)
-}
-```
-
-* First you give your function a name. 
-* Then you assign value to it, where the value is the function. 
-
-When **defining the function** you will want to provide the **list of arguments required** (inputs and/or options to modify behaviour of the function), and wrapped between curly brackets place the **tasks that are being executed on/using those arguments**.  The argument(s) can be any type of object (like a scalar, a matrix, a dataframe, a vector, a logical, etc), and it’s not necessary to define what it is in any way. 
-
-Finally, you can **“return” the value of the object from the function**, meaning pass the value of it into the global environment. The important idea behind functions is that objects that are created within the function are local to the environment of the function – they don’t exist outside of the function. 
-
-> **NOTE:** You can also have a function that doesn't require any arguments, nor will it return anything.
-
-Let's try creating a simple example function. This function will take in a numeric value as input, and return the squared value.
-
-```r
-square_it <- function(x) {
-    square <- x * x
-    return(square)
-}
-```
-
-Now, we can use the function as we would any other function. We type out the name of the function, and inside the parentheses  we provide a numeric value `x`:
-
-```r
-square_it(5)
-```
-
-Pretty simple, right? In this case, we only had one line of code that was run, but in theory you could have many lines of code to get obtain the final results that you want to "return" to the user. We have only scratched the surface here when it comes to creating functions! We will revisit this in later lessons, but if interested you can also find more detailed information on this [R-bloggers site](https://www.r-bloggers.com/how-to-write-and-debug-an-r-function/), which is where we adapted this example from.
-
 ## Packages and Libraries
 
 **Packages** are collections of R functions, data, and compiled code in a well-defined format, created to add specific functionality. There are 10,000+ user contributed packages and growing.
@@ -174,15 +159,10 @@ There are a set of **standard (or base) packages** which are considered part of 
 
 The directories in R where the packages are stored are called the **libraries**. The terms *package* and *library* are sometimes used synonymously and there has been [discussion](http://www.r-bloggers.com/packages-v-libraries-in-r/) amongst the community to resolve this. It is somewhat counter-intuitive to _load a package_ using the `library()` function and so you can see how confusion can arise.
 
-
 You can check what libraries are loaded in your current R session by typing into the console:
 
 ```r
 sessionInfo() #Print version information about R, the OS and attached or loaded packages
-
-# OR
-
-search() #Gives a list of attached packages
 ```
 
 In this workshop we have introduced you to functions from the standard base packages. However, the more you work with R you will come to realize that there is a cornucopia of R packages that offer a wide variety of functionality. To use additional packages will require installation. Many packages can be installed from the [CRAN](http://cran.r-project.org/) or [Bioconductor](https://www.bioconductor.org/) repositories.
@@ -201,29 +181,29 @@ An example is given below for the `ggplot2` package that will be required for so
 install.packages("ggplot2")
 ```
 
->### Package installation from Bioconductor
->Alternatively, packages can also be installed from [Bioconductor](https://www.bioconductor.org/), another repository of packages which provides tools for the analysis and comprehension of high-throughput **genomic data**. These packages includes (but is not limited to) tools for performing statistical analysis, annotation packages, and accessing public datasets.
->
-><img src="../img/bioconductor_logo.png" width="300">
->
->There are many packages that are available in CRAN and Bioconductor, but there are also packages that are specific to one repository. Generally, you can find out this information with a Google search or by trial and error. 
->
->To install from Bioconductor, you will first need to install BiocManager. *This only needs to be done once ever for your R installation.* 
->
->```r
-># DO NOT RUN THIS!
->
->install.packages("BiocManager")
->```
->
->Then you can use the `install()` function to install a package by providing the name in quotations. Here we show that the same package `ggplot2` is available through Bioconductor:
->
->```r
-># DO NOT RUN THIS!
->
->library(BiocManager)
->install("ggplot2")
->```
+> ### Package installation from Bioconductor
+> Alternatively, packages can also be installed from [Bioconductor](https://www.bioconductor.org/), another repository of packages which provides tools for the analysis and comprehension of high-throughput **genomic data**. These packages includes (but is not limited to) tools for performing statistical analysis, annotation packages, and accessing public datasets.
+> 
+> <img src="../img/bioconductor_logo.png" width="300">
+> 
+> There are many packages that are available in CRAN and Bioconductor, but there are also packages that are specific to one repository. Generally, you can find out this information with a Google search or by trial and error. 
+> 
+> To install from Bioconductor, you will first need to install BiocManager. *This only needs to be done once ever for your R installation.* 
+> 
+> ```r
+> # DO NOT RUN THIS!
+> 
+> install.packages("BiocManager")
+> ```
+> 
+> Then you can use the `install()` function to install a package by providing the name in quotations. Here we show that the same package `ggplot2` is available through Bioconductor:
+> 
+> ```r
+> # DO NOT RUN THIS!
+> 
+> library(BiocManager)
+> install("ggplot2")
+> ```
 
 ### Loading libraries
 Once you have the package installed, you can **load the library** into your R session for use. Any of the functions that are specific to that package will be available for you to use by simply calling the function as you would for any of the base functions. *Note that quotations are not required here.*
@@ -254,13 +234,13 @@ If your library is successfully loaded you will see the box checked, as in the s
 An alternative is to find the help manual online, which can be less technical and sometimes easier to follow. For example, [this website](http://docs.ggplot2.org/current/) is much more comprehensive for ggplot2 and is the result of a Google search. Many of the Bioconductor packages also have very helpful vignettes that include comprehensive tutorials with mock data that you can work with.
 
 
->### Cryptic error messages
->
->It is very likely that someone else has encountered this same problem already! 
->
->* Start by googling the error message.  However, this doesn't always work very well because often, package developers rely on the error catching provided by R. You end up with general error messages that might not be very helpful to diagnose a problem (e.g. "subscript out of bounds").
->
->* Check stackoverflow. Search using the `[r]` tag. Most questions have already been answered, but the challenge is to use the right words in the search to find the answers: [http://stackoverflow.com/questions/tagged/r](http://stackoverflow.com/questions/tagged/r)
+> ### Cryptic error messages
+> 
+> It is very likely that someone else has encountered this same problem already! 
+> 
+> * Start by googling the error message.  However, this doesn't always work very well because often, package developers rely on the error catching provided by R. You end up with general error messages that might not be very helpful to diagnose a problem (e.g. "subscript out of bounds").
+> 
+> * Check stackoverflow. Search using the `[r]` tag. Most questions have already been answered, but the challenge is to use the right words in the search to find the answers: [http://stackoverflow.com/questions/tagged/r](http://stackoverflow.com/questions/tagged/r)
 
 ***
 
@@ -269,7 +249,6 @@ An alternative is to find the help manual online, which can be less technical an
 The `ggplot2` package is part of the [`tidyverse` suite of integrated packages](https://www.tidyverse.org/packages/) which was designed to work together to make common data science operations more user-friendly. **We will be using the `tidyverse` suite in later lessons, and so let's install it**. 
 
 ***
-
 
 ## Where to ask for help?
 
@@ -302,13 +281,9 @@ The `ggplot2` package is part of the [`tidyverse` suite of integrated packages](
 * The [Introduction to R](http://cran.r-project.org/doc/manuals/R-intro.pdf) can also be dense for people with little programming experience but it is a good place to understand the underpinnings of the R language.
 * The [R FAQ](http://cran.r-project.org/doc/FAQ/R-FAQ.html) is dense and technical but it is full of useful information.
 
-
-
-
 ---
 
 *This lesson has been developed by members of the teaching team at the [Harvard Chan Bioinformatics Core (HBC)](http://bioinformatics.sph.harvard.edu/). These are open access materials distributed under the terms of the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.*
 
 * *The materials used in this lesson are adapted from work that is Copyright © Data Carpentry (http://datacarpentry.org/). 
 All Data Carpentry instructional material is made available under the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0).*
-
