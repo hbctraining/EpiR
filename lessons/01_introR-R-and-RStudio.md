@@ -1,9 +1,9 @@
 ---
 title: Introduction to R and RStudio
 authors: Mary Piper, Meeta Mistry
-date: "Friday, September 8, 2017"
+date: "Tuesday, June 11, 2019"
 ---
-Approximate time: 45 minutes
+Approximate time: 35 minutes
 
 ## Learning Objectives
 
