@@ -21,5 +21,5 @@
 |10:40 - 10:50 | Break | |
 |10:50 - 11:10 | [Data Wrangling: Subsetting Data Frames, Matrices, and Lists](https://hbctraining.github.io/EpiR/lessons/05_introR-data-wrangling2.html) | Mary |
 |11:10 - 11:45 | [Data Visualization with R](https://hbctraining.github.io/EpiR/lessons/06_ggplot2.html) | Radhika |
-|11:45 - 12:00 | [Wrap-up]() | Mary |
+|11:45 - 12:00 | [Wrap-up](https://github.com/hbctraining/EpiR/raw/master/lectures/R%20Workshop%20wrapup.pdf) | Mary |
 | | [Practice Exercises](https://hbctraining.github.io/Intro-to-R/homework/Intro_to_R_hw.html) & [Answer Key](https://hbctraining.github.io/Intro-to-R/homework/Intro_to_R_key.html) | |
