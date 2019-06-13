@@ -39,7 +39,7 @@ When working with genomic data, we often have a metadata file containing informa
 The `read.csv` function has *one required argument* and several *options* that can be specified. The mandatory argument is a path to the file and filename, which in our case is `data/mouse_exp_design.csv`. We will put the function to the right of the assignment operator, meaning that **any output will be saved as the variable name provided on the left**.
 
 ```r
-metadata <- read.csv(file="data/metadata.csv")
+metadata <- read.csv(file="data/IntroR_metadata.csv")
 ```
 
 > *Note: By default, `read.csv` converts (= coerces) columns that contain characters (i.e., text) into the `factor` data type. Depending on what you want to do with the data, you may want to keep these columns as `character`. To do so, `read.csv()` and `read.table()` have an argument called `stringsAsFactors` which can be set to `FALSE`.*
