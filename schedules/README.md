@@ -87,10 +87,12 @@ Below we have listed a few extra lessons for you to peruse through. These are de
 
 ## Exercises
 
-The key to mastering a skill is through application. In this workshop, we have provided you with the fundamental concepts required to get started in R. We encourage you to build upon that base through some practical application. We have created the exercises below, which allow you to play with R and practice your coding in R. For each set of exercises, we also provide the answer key. Go ahead and give it a try! 
+The key to mastering a skill is through application. In this workshop, we have provided you with the fundamental concepts required to get started in R. We encourage you to **build upon that base through some practical application**. We have created the exercises below, which allow you to play and practice your coding in R. For each set of exercises, we also provide the answer key. 
+
+Go ahead and give it a try! 
 
 
 * [Practicing with custom functions](https://hbctraining.github.io/Intro-to-R-flipped/activities/Day2_activities.html) + [Answer key](https://hbctraining.github.io/Intro-to-R-flipped/activities/Day2_activities_answer_key.R)
 * [Fun with data wrangling](https://hbctraining.github.io/Intro-to-R-flipped/activities/Day3_activities.html) + [Answer key](https://hbctraining.github.io/Intro-to-R-flipped/activities/Day3_activities_answer_key.R)
-* [Tidyverse and data visualization][(https://hbctraining.github.io/Intro-to-R-flipped/activities/Day4_activities.html) + [Answer key](https://hbctraining.github.io/Intro-to-R-flipped/activities/Day4_activities_answer_key.R)
+* [Tidyverse and data visualization](https://hbctraining.github.io/Intro-to-R-flipped/activities/Day4_activities.html) + [Answer key](https://hbctraining.github.io/Intro-to-R-flipped/activities/Day4_activities_answer_key.R)
 * [Overall practice with R](https://hbctraining.github.io/Intro-to-R/homework/Intro_to_R_hw.html) + [Answer key](https://hbctraining.github.io/Intro-to-R/homework/Intro_to_R_key.html)
