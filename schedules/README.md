@@ -3,7 +3,7 @@
 ## Day 1
 | Time            |  Topic  | Instructor |
 |:------------------------:|:------------------------------------------------:|:--------:|
-|13:00 - 13:30 | [Workshop Introduction]() |  |
+|13:00 - 13:30 | [Workshop Introduction]() | Meeta |
 |13:30 - 14:15 | [Introduction to R and RStudio](https://hbctraining.github.io/Intro-to-R-flipped/lessons/01_introR-R-and-RStudio.html) | Jihe |
 |14:15 - 14:20 | Break | |
 |14:20 - 15:00 | [R Syntax and Data Structure](https://hbctraining.github.io/Intro-to-R-flipped/lessons/02_introR-syntax-and-data-structures.html) | Meeta |
@@ -11,27 +11,27 @@
 ## Day 2
 | Time            |  Topic  | Instructor |
 |:------------------------:|:------------------------------------------------:|:--------:|
-|13:00 - 13:45 | [Functions and Arguments](https://hbctraining.github.io/Intro-to-R-flipped/lessons/03_introR-functions-and-arguments.html) |  |
-|13:45 - 14:10 | [Packages and Libraries](https://hbctraining.github.io/Intro-to-R-flipped/lessons/04_introR_packages.html) |  |
+|13:00 - 13:45 | [Functions and Arguments](https://hbctraining.github.io/Intro-to-R-flipped/lessons/03_introR-functions-and-arguments.html) | Jihe |
+|13:45 - 14:10 | [Packages and Libraries](https://hbctraining.github.io/Intro-to-R-flipped/lessons/04_introR_packages.html) | Jihe |
 |14:10 - 14:15 | Break | |
 |14:15 - 15:00 | [Reading in and Inspecting Data](https://hbctraining.github.io/Intro-to-R-flipped/lessons/06_reading_and_data_inspection.html) |  Meeta |
 
 ## Day 3
 | Time            |  Topic  | Instructor |
 |:------------------------:|:------------------------------------------------:|:--------:|
-|13:00 - 14:15 | [Data Wrangling: Subsetting Vectors and Factors](https://hbctraining.github.io/Intro-to-R-flipped/lessons/05_introR-data-wrangling.html) | |
+|13:00 - 14:15 | [Data Wrangling: Subsetting Vectors and Factors](https://hbctraining.github.io/Intro-to-R-flipped/lessons/05_introR-data-wrangling.html) | Meeta |
 |14:15 - 14:20 | Break | |
-|14:20 - 15:00 | [More Data Wrangling: Dataframes, Matrices and Lists](https://hbctraining.github.io/Intro-to-R-flipped/lessons/07_introR-data-wrangling2.html) |  |
+|14:20 - 15:00 | [More Data Wrangling: Dataframes, Matrices and Lists](https://hbctraining.github.io/Intro-to-R-flipped/lessons/07_introR-data-wrangling2.html) | Jihe |
 
 ## Day 4
 | Time            |  Topic  | Instructor |
 |:------------------------:|:------------------------------------------------:|:--------:|
-| 13:00 - 13:20|[Setting up for data visualization](https://hbctraining.github.io/Intro-to-R-flipped/lessons/10_setting_up_to_plot.html) | |
-| 13:20 - 14:00| [Plotting with the ggplot2 package](https://hbctraining.github.io/Intro-to-R-flipped/lessons/11_ggplot2.html) | |
+| 13:00 - 13:20|[Setting up for data visualization](https://hbctraining.github.io/Intro-to-R-flipped/lessons/10_setting_up_to_plot.html) | Meeta |
+| 13:20 - 14:00| [Plotting with the ggplot2 package](https://hbctraining.github.io/Intro-to-R-flipped/lessons/11_ggplot2.html) | Meeta |
 | 14:00 - 14:05 | Break | |
-| 14:05 - 14:30| [In-class exercise: Generating a boxplot](https://hbctraining.github.io/Intro-to-R-flipped/lessons/12_boxplot_exercise.html) | |
-| 14:30 - 14:45 | Review of additional materials and exercises | |
-| 14:30 - 14:45 | [Wrap-up]() | |
+| 14:05 - 14:30| [In-class exercise: Generating a boxplot](https://hbctraining.github.io/Intro-to-R-flipped/lessons/12_boxplot_exercise.html) | Jihe |
+| 14:30 - 14:45 | Review of additional materials and exercises | Jihe|
+| 14:30 - 14:45 | [Wrap-up]() | Meeta |
 
 
 
