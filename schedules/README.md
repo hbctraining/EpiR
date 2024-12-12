@@ -1,6 +1,7 @@
 # Workshop Schedule 
 
 ## Day 1
+
 | Time            |  Topic  | Instructor |
 |:------------------------:|:------------------------------------------------:|:--------:|
 |13:00 - 13:30 | [Workshop Introduction]() | Meeta |
@@ -9,6 +10,7 @@
 |14:20 - 15:00 | [R Syntax and Data Structure](https://hbctraining.github.io/Intro-to-R-flipped/lessons/02_introR-syntax-and-data-structures.html) | Meeta |
 
 ## Day 2
+
 | Time            |  Topic  | Instructor |
 |:------------------------:|:------------------------------------------------:|:--------:|
 |13:00 - 13:45 | [Functions and Arguments](https://hbctraining.github.io/Intro-to-R-flipped/lessons/03_introR-functions-and-arguments.html) | Jihe |
@@ -17,6 +19,7 @@
 |14:15 - 15:00 | [Reading in and Inspecting Data](https://hbctraining.github.io/Intro-to-R-flipped/lessons/06_reading_and_data_inspection.html) |  Meeta |
 
 ## Day 3
+
 | Time            |  Topic  | Instructor |
 |:------------------------:|:------------------------------------------------:|:--------:|
 |13:00 - 14:15 | [Data Wrangling: Subsetting Vectors and Factors](https://hbctraining.github.io/Intro-to-R-flipped/lessons/05_introR-data-wrangling.html) | Meeta |
@@ -24,6 +27,7 @@
 |14:20 - 15:00 | [More Data Wrangling: Dataframes, Matrices and Lists](https://hbctraining.github.io/Intro-to-R-flipped/lessons/07_introR-data-wrangling2.html) | Jihe |
 
 ## Day 4
+
 | Time            |  Topic  | Instructor |
 |:------------------------:|:------------------------------------------------:|:--------:|
 | 13:00 - 13:20|[Setting up for data visualization](https://hbctraining.github.io/Intro-to-R-flipped/lessons/10_setting_up_to_plot.html) | Meeta |
